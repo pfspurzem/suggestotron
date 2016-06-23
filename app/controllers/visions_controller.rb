@@ -60,7 +60,11 @@ class VisionsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+  def upvote
+    @vision = Vision.find(params[:id])
+    @vision.votes.create
+    redirect_to(visions_path)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vision
@@ -69,6 +73,6 @@ class VisionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vision_params
-      params.require(:vision).permit(:title, :description, :location)
+      params.require(:vision).permit(:title, :description, :location, :sexo)
     end
 end

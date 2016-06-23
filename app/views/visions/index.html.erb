@@ -18,6 +18,8 @@
         <td><%= vision.title %></td>
         <td><%= vision.description %></td>
         <td><%= vision.location %></td>
+        <td><%= pluralize(vision.votes.count, "vote") %></td>
+        <td><%= button_to '+1', upvote_vision_path(vision), method: :post %></td>
         <td><%= link_to 'Show', vision %></td>
         <td><%= link_to 'Edit', edit_vision_path(vision) %></td>
         <td><%= link_to 'Destroy', vision, method: :delete, data: { confirm: 'Are you sure?' } %></td>
