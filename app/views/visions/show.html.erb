@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @vision.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @vision.description %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @vision.location %>
+</p>
+
+<%= link_to 'Edit', edit_vision_path(@vision) %> |
+<%= link_to 'Back', visions_path %>
