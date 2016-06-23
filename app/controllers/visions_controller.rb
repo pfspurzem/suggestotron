@@ -29,7 +29,7 @@ class VisionsController < ApplicationController
     respond_to do |format|
       if @vision.save
         format.html { redirect_to @vision, notice: 'Vision was successfully created.' }
-        format.json { render :show, status: :created, location:, :sexo @vision }
+        format.json { render :show, status: :created, location: @vision }
       else
         format.html { render :new }
         format.json { render json: @vision.errors, status: :unprocessable_entity }
@@ -60,6 +60,9 @@ class VisionsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def vision_params
+    params.require(:vision).permit(:title, :description, :location, :sexo)
+  end
   def upvote
     @vision = Vision.find(params[:id])
     @vision.votes.create
@@ -72,7 +75,5 @@ class VisionsController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def vision_params
-      params.require(:vision).permit(:title, :description, :location, :sexo)
-    end
+
 end
