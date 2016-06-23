@@ -4,7 +4,7 @@ class CreateVisions < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.string :location
-
+      t.text :genero
       t.timestamps null: false
     end
   end
