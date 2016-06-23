@@ -29,7 +29,7 @@ class VisionsController < ApplicationController
     respond_to do |format|
       if @vision.save
         format.html { redirect_to @vision, notice: 'Vision was successfully created.' }
-        format.json { render :show, status: :created, location: @vision }
+        format.json { render :show, status: :created, location:, :sexo @vision }
       else
         format.html { render :new }
         format.json { render json: @vision.errors, status: :unprocessable_entity }

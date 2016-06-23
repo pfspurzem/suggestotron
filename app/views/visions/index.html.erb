@@ -18,6 +18,7 @@
         <td><%= vision.title %></td>
         <td><%= vision.description %></td>
         <td><%= vision.location %></td>
+        <td><%= vision.sexo %></td>
         <td><%= pluralize(vision.votes.count, "vote") %></td>
         <td><%= button_to '+1', upvote_vision_path(vision), method: :post %></td>
         <td><%= link_to 'Show', vision %></td>
