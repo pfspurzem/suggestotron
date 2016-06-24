@@ -28,7 +28,7 @@ class VisionsController < ApplicationController
 
     respond_to do |format|
       if @vision.save
-        format.html { redirect_to @vision, notice: 'Vision was successfully created.' }
+        format.html { redirect_to visions_path, notice: 'Vision was successfully created.' }
         format.json { render :show, status: :created, location: @vision }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class VisionsController < ApplicationController
   def update
     respond_to do |format|
       if @vision.update(vision_params)
-        format.html { redirect_to @vision, notice: 'Vision was successfully updated.' }
+        format.html { redirect_to visions_path, notice: 'Vision was successfully updated.' }
         format.json { render :show, status: :ok, location: @vision }
       else
         format.html { render :edit }
